@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect  # Combine imports into one line
 from .forms import UserRegistrationForm, ProfileForm  # Combine form imports into one line
 from django.contrib.auth.decorators import login_required
 
+
 # Registration View
 from django.contrib.auth.models import User
 from .forms import UserRegistrationForm, ProfileForm
@@ -54,3 +55,10 @@ class CustomLoginView(LoginView):
     template_name = 'profiles/login.html'
     # You can add additional context or methods if needed
 
+
+@login_required
+def post_login_redirect(request):
+    if request.user.profile.is_musician:  # Assumption: user has a one-to-one link to profile
+        return redirect('/musician_dash/dashboard/')
+    else:
+        return redirect('/some_other_default_dashboard/')

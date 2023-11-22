@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'ProfilesApp', 
+    'ProfilesApp.apps.ProfilesAppConfig', 
     'HomePageApp',
     'musician_dash',
 ]
@@ -124,7 +124,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 APPEND_SLASH = False
 
 # settings.py
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'post_login_redirect'
+
 
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)

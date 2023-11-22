@@ -35,5 +35,13 @@ class Profile(models.Model):
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name} - {self.user.username}"
 
+#Logic for forwaring Login page to correct user dash (musician or venue)
+
+def is_user_musician(user):
+    try:
+        profile = user.profile  # Assuming 'profile' is the related name for the UserProfile
+        return profile.is_musician
+    except Profile.DoesNotExist:
+        return False
 
 

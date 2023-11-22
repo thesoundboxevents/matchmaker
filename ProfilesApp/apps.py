@@ -1,6 +1,11 @@
 from django.apps import AppConfig
 
 
-class ProfilesappConfig(AppConfig):
-    default_auto_field = "django.db.models.BigAutoField"
-    name = "ProfilesApp"
+from django.apps import AppConfig
+
+class ProfilesAppConfig(AppConfig):
+    name = 'ProfilesApp'
+
+    def ready(self):
+        import ProfilesApp.signals
+
