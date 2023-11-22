@@ -19,10 +19,14 @@ from django.contrib import admin
 from django.urls import path, include
 from HomePageApp.views import home_view  # Importing the home_view from HomePageApp
 
+#profiles/home/admin
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profiles/', include('ProfilesApp.urls')),  # Include URLs from ProfilesApp
     path('', home_view, name='home'),  # URL pattern for the home page
+    path('musician_dash/', include('musician_dash.urls')),
 ]
 
+#musician dash
 

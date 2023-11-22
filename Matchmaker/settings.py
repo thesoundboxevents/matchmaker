@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'ProfilesApp', 
-    'HomePageApp', 
+    'HomePageApp',
+    'musician_dash',
 ]
 
 MIDDLEWARE = [
