@@ -1,0 +1,12 @@
+{% extends "base.html" %}  {# Extend your base template if you have one #}
+
+{% block content %}
+<h2>Edit Profile</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}  {# Renders form fields as paragraph elements #}
+    <button type="submit">Save changes</button>
+</form>
+
+{% endblock %}
