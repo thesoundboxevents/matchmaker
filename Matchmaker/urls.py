@@ -26,6 +26,7 @@ urlpatterns = [
     path('profiles/', include('ProfilesApp.urls')),  # Include URLs from ProfilesApp
     path('', home_view, name='home'),  # URL pattern for the home page
     path('musician_dash/', include('musician_dash.urls')),
+    path('venues/', include('venue_Profiles.urls')),
 ]
 
 #musician dash
