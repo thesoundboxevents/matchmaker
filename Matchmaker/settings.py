@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'HomePageApp',
     'musician_dash',
     'venue_Profiles',
+    'venues_dash.apps.VenuesDashConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,5 @@
+# venues_dash/views.py
 from django.shortcuts import render
 
-# Create your views here.
+def venue_dashboard(request):
+    return render(request, 'venue_dash/dashboard.html')
