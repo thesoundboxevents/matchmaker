@@ -1,3 +1,5 @@
+#views.py inside HomePageApp
+
 from django.shortcuts import render
 
 # HomePageApp/views.py

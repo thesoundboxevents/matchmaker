@@ -1,19 +1,41 @@
+<!-- home.html inside HomepagePageApp/templates -->
+
+{% load static %}
+<link href="{% static 'HomePageApp/css/navbar.css' %}" rel="stylesheet">
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Matchmaker</title>
+    <!-- Add external CSS links and other head elements here -->
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'register' %}">Register</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-            <!-- Add other navigation items as needed -->
-        </ul>
-    </nav>
-    
-    <h1>Welcome to Our Website!</h1>
-    <!-- Rest of your home page content -->
+    <header>
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/musicians">Musicians</a>
+            <a href="/venues">Venues</a>
+            <a href="/bookings">Bookings</a>
+            <a href="/login">Login</a>
+            <a href="{% url 'user_type_selection' %}">Register</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/contact">Contact</a>
+            <a href="/faq">FAQ/Help</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Welcome to Matchmaker!</h1>
+        <p>Discover talented musicians and amazing venues for your next event.</p>
+        <!-- Add more content like featured musicians, venues, events -->
+    </main>
+
+    <footer>
+        <!-- Footer content -->
+    </footer>
 </body>
 </html>

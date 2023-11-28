@@ -1,3 +1,5 @@
+#apps.py inside HomePageApp
+
 from django.apps import AppConfig
 
 

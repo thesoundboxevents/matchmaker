@@ -1,3 +1,5 @@
+#settings .py inside Matchmaker
+
 """
 Django settings for Matchmaker project.
 
@@ -41,9 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'ProfilesApp.apps.ProfilesAppConfig', 
     'HomePageApp',
-    'musician_dash',
-    'venue_Profiles',
-    'venues_dash.apps.VenuesDashConfig',
+    'Musician_Dash',
+    'Venue_Dash.apps.VenueDashConfig',
+    'AuthenticationApp',
+    'NewUserApp'
 ]
 
 MIDDLEWARE = [

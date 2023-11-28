@@ -1,3 +1,5 @@
+#apps.py inside ProfilesApp
+
 from django.apps import AppConfig
 
 

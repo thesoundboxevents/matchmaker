@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
+#views.py inside musician_dash
 
-@login_required
+from django.http import HttpResponse
+
 def dashboard(request):
-    #add any aditional logic her
-    return render(request, 'musician_dash/dashboard.html')
+    return HttpResponse("Dashboard view placeholder.")
 
