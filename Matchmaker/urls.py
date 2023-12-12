@@ -11,6 +11,6 @@ urlpatterns = [
     path('', home_view, name='home'),  # URL pattern for the home page
     path('musician_dash/', include('Musician_Dash.urls')),
     path('venue-dash/', include('Venue_Dash.urls')),
-    path('auth/', include('NewUserApp.urls')),  # Corrected
+    path('new_user/', include('NewUserApp.urls')),  # Corrected
 
 ]

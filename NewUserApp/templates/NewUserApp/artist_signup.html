@@ -1,13 +1,23 @@
-<!--#this is the code for Matchmaker/AuthenticationApp/templates/AuthenticationApp/aritst_signup.html-->
+{% block content %}
+<form method="post" action="{% url 'artist_signup' %}">
+    {% csrf_token %}
+    <!-- ArtistProfile Fields -->
+    {{ signup_form.as_p }}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Artist Signup</title>
-</head>
-<body>
-    <h1>Artist Signup</h1>
-    <p>This is the artist signup page. The form will go here.</p>
-    <!-- Form elements will be added here later -->
-</body>
-</html>
+    <!-- ArtistAddress Fields -->
+    {{ address_form.as_p }}
+
+    <!-- Password Handling -->
+    <div>
+        <label for="id_password">Password:</label>
+        <input type="password" id="id_password" name="password" required>
+    </div>
+    <div>
+        <label for="id_password_confirm">Confirm Password:</label>
+        <input type="password" id="id_password_confirm" name="password_confirm" required>
+    </div>
+    <div>
+        <button type="submit">Sign Up</button>
+    </div>
+</form>
+{% endblock %}
