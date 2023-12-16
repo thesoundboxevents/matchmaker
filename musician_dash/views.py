@@ -1,7 +1,8 @@
 #views.py inside musician_dash
 
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def dashboard(request):
-    return HttpResponse("Dashboard view placeholder.")
+    return render(request, 'musician_dash/dashboard.html')
+
 
