@@ -13,6 +13,8 @@ urlpatterns = [
     path('venue-dash/', include('Venue_Dash.urls')),
     path('new_user/', include('NewUserApp.urls')),  # Corrected
     path('api/', include('ChatGPT_Integration.urls')),
+    path('musician_dash/', include('Musician_Dash.urls')),
+    path('data_cleaner/', include('Data_Cleaner_and_Handler.urls')),
 
 ]
 

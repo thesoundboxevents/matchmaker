@@ -11,7 +11,7 @@ class ChatGPTClient:
             'Authorization': f'Bearer {self.api_key}',
             'Content-Type': 'application/json'  # Explicitly set the Content-Type
         }
-        self.endpoint = "https://api.openai.com/v1/chat/completions"#ensure endpoint is only accessed at form submission, not codebase reload
+        self.endpoint = "https://api.openai.com/v1/chat/completions"#ensure endpoint is only accessed at form submission, not codebase reload when server active
 
     def get_response(self, messages):
         data = {
@@ -24,7 +24,6 @@ class ChatGPTClient:
         print("Endpoint:", self.endpoint)
         print("Headers:", self.headers)
         print("Data:", data)
-
 
         try:
             response = requests.post(self.endpoint, headers=self.headers, json=data)
@@ -42,4 +41,3 @@ if response:
     print(response)
 else:
     print("No response received.")
-

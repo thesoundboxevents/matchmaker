@@ -8,5 +8,15 @@
 <body>
     <h1>Welcome to Your Musician Dashboard</h1>
     <!-- Dashboard content will be added here -->
+
+    <form action="/data_cleaner/send-to-chatgpt/" method="post">
+        {% csrf_token %}
+        <label for="user_input">Enter your message:</label>
+        <input type="text" id="user_input" name="text_data" required>
+        <button type="submit">Send</button>
+    </form>
+
 </body>
 </html>
+
+
