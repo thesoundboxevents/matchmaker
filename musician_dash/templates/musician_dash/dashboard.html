@@ -4,19 +4,40 @@
 <html>
 <head>
     <title>Musician Dashboard</title>
+    <!-- Add any additional CSS or JS links here -->
 </head>
 <body>
     <h1>Welcome to Your Musician Dashboard</h1>
     <!-- Dashboard content will be added here -->
 
-    <form action="/data_cleaner/send-to-chatgpt/" method="post">
+    <form id="chat-form">
         {% csrf_token %}
         <label for="user_input">Enter your message:</label>
         <input type="text" id="user_input" name="text_data" required>
-        <button type="submit">Send</button>
+        <button type="button" onclick="sendMessage()">Send</button>
     </form>
 
+    <!-- Response area -->
+    <div id="response_area"></div>
+
+    <!-- AJAX Script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    function sendMessage() {
+        var userInput = $('#user_input').val();
+        $.ajax({
+            url: '/data_cleaner/send-to-chatgpt/',
+            type: 'post',
+            data: {
+                'text_data': userInput,
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function(response) {
+                // Display the response in response_area
+                $('#response_area').html(response);
+            }
+        });
+    }
+    </script>
 </body>
 </html>
-
-
