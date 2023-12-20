@@ -33,9 +33,10 @@
                 'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
             },
             success: function(response) {
-                var message = response.choices[0].text;
-                $('#response_area').html(message);
+            var message = response.choices[0].message.content; // Correctly accessing the message content
+            $('#response_area').html(message); // Displaying the message in the response_area div
             }
+
         });
     }
     </script>
